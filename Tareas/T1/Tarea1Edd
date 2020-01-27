@@ -1,0 +1,61 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package tarea1edd;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *
+ * @author Kex
+ */
+public class Tarea1edd {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        try {
+            // TODO code application logic here
+            InputStreamReader isr = new InputStreamReader(System.in);
+            BufferedReader br = new BufferedReader (isr);
+            int tamañox = 0;
+            int tamañoy = 0;
+            System.out.println("Ingresa tamaño de filas de la matriz");
+            tamañox = Integer.parseInt(br.readLine());
+            System.out.println("Ingresa tamaño de columnas de la matriz");
+            tamañoy = Integer.parseInt(br.readLine());
+            int[][] matriz = new int[tamañoy][tamañox];
+            for (int i = 0; i < tamañoy; i++) {
+                for (int j = 0; j < tamañox; j++) {
+                    if (i ==0) {
+                        matriz[i][j]= 1;
+                    }else if(i == tamañoy-1){
+                        matriz[i][j]=1;
+                    }else if(j==0){
+                        matriz[i][j]=1;
+                    }else if(j==tamañox-1){
+                        matriz[i][j]=1;
+                    }
+                }
+            }
+             for (int i = 0; i < tamañoy; i++) {
+                for (int j = 0; j < tamañox; j++) {
+                    System.out.print(matriz[i][j]);
+                    if (j ==tamañox-1) {
+                        System.out.println(" n   ");
+                    }
+                }
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(Tarea1edd.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+}
